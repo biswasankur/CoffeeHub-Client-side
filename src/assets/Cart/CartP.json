@@ -1,0 +1,19 @@
+{
+  "cart": [
+    {
+      "_id": "64d4925bb0bc54d8ec22c7e5",
+      "itemName": "Red Eye",
+      "itemDetails": "The Red-eye is considered a coffee and hot chocolate hybrid. The chocolate powder or syrup gives it a rich and creamy flavor and cuts the acidity of the espresso.",
+      "price": "450",
+      "image": "Red-Eye.jpg",
+      "status": true,
+      "createdAt": "2023-08-10T07:31:40.074Z",
+      "updatedAt": "2023-08-10T07:31:40.074Z",
+      "__v": 0,
+      "email": "nabendu8942@gmail.com",
+      "quantity": 1,
+      "sub_total": 450,
+      "id": 1
+    }
+  ]
+}

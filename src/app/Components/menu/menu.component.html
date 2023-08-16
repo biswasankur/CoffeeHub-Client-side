@@ -1,0 +1,88 @@
+<br><br>
+<div class="container py-3">
+
+    <br><br>
+    <button class="btn btn-outline-success" type="submit">
+        <div>
+            <input class="form-control me-2 d-flex" type="search" placeholder="Search" aria-label="Search" #search
+                (keyup)="onSearch(search)" style="width: 350px;">
+
+        </div>
+    </button>
+
+    <div class="row">
+        <ng-container *ngIf="searchedCoffee.length != 0 then searchedBlock else elseBlock"> </ng-container>
+        <ng-template #searchedBlock>
+            <ng-container *ngFor="let prod of searchedCoffee">
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
+                    <div class="card p-3">
+                        <img src={{img_path}}{{prod?.image}} class="card-img-top" alt="product">
+                        <div class="card-body">
+                            <h6 class="card-title">
+                                {{prod?.itemName}}
+                                <br>
+                                <span>
+                                    <span class="text-danger fw-semibold me-2">₹ {{prod?.price}}</span>
+                                    <!-- <del> ₹ {{prod?.price}}</del><br> -->
+                                    <br>
+                                    <span class="text-success ms-2">20% Off</span>
+                                    <!-- <span class="text-success ms-2">Discounted Price: {{discountedPrice }}</span> -->
+                                    <br>
+                                    <i class="fa-solid fa-star m-0" style=" color: rgb(208, 239, 8);"></i>
+                                    <i class="fa-solid fa-star m-0" style=" color: rgb(208, 239, 8);"></i>
+                                    <i class="fa-solid fa-star m-0" style=" color: rgb(208, 239, 8);"></i>
+                                    <i class="fa-solid fa-star m-0" style=" color: rgb(208, 239, 8);"></i>
+                                    <span class="text-muted">(22)</span>
+                                </span>
+                            </h6>
+                            <h6 class="card-title">
+                                <!-- {{prod?.itemDetails}} -->
+                            </h6>
+                        </div>
+                        <a routerLink="/details/{{prod._id}}">
+                            <div>
+                                <button class="btn btn-primary">Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </ng-container>
+        </ng-template>
+        <ng-template #elseBlock>
+            <ng-container *ngFor="let prod of allItem">
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
+                    <div class="card p-3">
+                        <img src={{img_path}}{{prod?.image}} class="card-img-top" alt="product">
+                        <div class="card-body">
+                            <h6 class="card-title">
+                                {{prod?.itemName}}
+                                <br>
+                                <span>
+                                    <span class="text-danger fw-semibold me-2">₹ {{prod?.price}}</span>
+                                    <!-- <del> ₹ {{prod?.price}}</del><br> -->
+                                    <br>
+                                    <span class="text-success ms-2">20% Off</span>
+                                    <!-- <span class="text-success ms-2">Discounted Price: {{discountedPrice }}</span> -->
+                                    <br>
+                                    <i class="fa-solid fa-star m-0" style=" color: rgb(208, 239, 8);"></i>
+                                    <i class="fa-solid fa-star m-0" style=" color: rgb(208, 239, 8);"></i>
+                                    <i class="fa-solid fa-star m-0" style=" color: rgb(208, 239, 8);"></i>
+                                    <i class="fa-solid fa-star m-0" style=" color: rgb(208, 239, 8);"></i>
+                                    <span class="text-muted">(22)</span>
+                                </span>
+                            </h6>
+                            <h6 class="card-title">
+                                <!-- {{prod?.itemDetails}} -->
+                            </h6>
+                        </div>
+                        <a routerLink="/details/{{prod._id}}">
+                            <div>
+                                <button class="btn btn-primary">Details</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </ng-container>
+        </ng-template>
+    </div>
+</div>

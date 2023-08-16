@@ -1,0 +1,59 @@
+<!-- <p>login works!</p> -->
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+            <form class="login100-form validate-form" [formGroup]="loginInputValue" (ngSubmit)="submitData()">
+                <span class=" login100-form-title p-b49">Login</span>
+                <br><br><br>
+
+                <div class="wrap-input100 validate-input m-b-23">
+                    <span class="label-input100">Email</span>
+                    <input class="input100" type="email" formControlName="email" id="email"
+                        placeholder="Type your email">
+                    <span class="focus-input100"></span>
+                    <ng-container
+                        *ngIf="loginInputValue.get('email')?.touched && loginInputValue.get('email')?.hasError('required')">
+                        <p class="error">Required field</p>
+                    </ng-container>
+                    <ng-container *ngIf="loginInputValue.get('email')?.hasError('pattern')">
+                        <p class="error">Worng pattern</p>
+                    </ng-container>
+                </div>
+
+                <div class="wrap-input100 validate-input">
+                    <span class="label-input100">Password</span>
+                    <input class="input100" [type]="changetype?'password':'text'" formControlName="password" id="pwd"
+                        placeholder="Type your password">
+                    <span class="eyeicon" (click)="view()">
+                        <i [ngClass]="visible?'fa fa-eye':'fa fa-eye-slash'"></i>
+                    </span>
+                    <ng-container
+                    *ngIf="loginInputValue.get('password')?.touched && loginInputValue.get('password')?.hasError('required')">
+                    <p class="error">Required field</p>
+                </ng-container>
+                <ng-container *ngIf="loginInputValue.get('password')?.hasError('pattern')">
+                    <p class="error">
+                        <!-- Password must contain atleast one:- <br>
+                        uppercase (A-Z), <br>
+                        lowercase (a-z), <br>
+                        numeric (0-9) and <br>
+                        special character (?=.*[!@#$&*]) <br>
+                        Ex:.xyz@123 -->
+                        Passowrd Not Match
+                    </p>
+                </ng-container>
+                </div>
+                <br>
+
+                <div class="wrap-login100-form-btn">
+                    <div class="login100-form-bgbtn"></div>
+                    <button type="submit" class="login100-form-btn">
+                        SignIn
+                    </button>
+
+                </div>
+            </form>
+            <p>Don't have an account? Register First: <a routerLink="/register"><h1><b>Register</b></h1></a></p>
+        </div>
+    </div>
+</div>

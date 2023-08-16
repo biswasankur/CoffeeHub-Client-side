@@ -1,0 +1,21 @@
+.flex-shrink-0{
+    flex: none;
+    height: 70px;
+    width: 150px;
+}
+/* .img-fluid{
+    border: 2px solid black;
+} */
+.borda{
+    border: 2px solid #9de2ff;
+}
+.img-fluid{
+    border: 2px solid black;
+    flex: none;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    
+}

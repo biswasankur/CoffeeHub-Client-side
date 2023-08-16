@@ -1,0 +1,90 @@
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+            <form class="login100-form validate-form" [formGroup]="registaionInputValue" (ngSubmit)="onSubmit()">
+                <span class="login100-form-title p-b49">Registration</span>
+                <br><br><br>
+
+                <div class="wrap-input100 validate-input m-b-23">
+                   <span class="label-input100">Name <b class="error">*</b> </span>
+                    <input class="input100" type="text" formControlName="name" id="name"
+                        placeholder="Type your username" >
+                    <span class="focus-input100"></span>
+                    <ng-container  *ngIf="registaionInputValue.get('name')?.touched && registaionInputValue.get('name')?.hasError('required')">
+                        <p class="error">required field</p>
+                    </ng-container>
+                    <ng-container *ngIf="registaionInputValue.get('name')?.hasError('minlength')">
+                        <p class="error">Enter minimum 2 Character</p>
+                    </ng-container>
+                  
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-23">
+                    <span class="label-input100">Email <b class="error">*</b></span>
+                    <input class="input100" type="email" formControlName="email" id="email"
+                        placeholder="Type your email">
+                    <span class="focus-input100"></span>
+                    <ng-container
+                        *ngIf="registaionInputValue.get('email')?.touched && registaionInputValue.get('email')?.hasError('required')">
+                        <p class="error">Required field</p>
+                    </ng-container>
+                    <ng-container *ngIf="registaionInputValue.get('email')?.hasError('pattern')">
+                        <p class="error">Worng pattern</p>
+                    </ng-container>
+                </div>
+                <div class="wrap-input100 validate-input m-b-23">
+                    <span class="label-input100">Phone <b class="error">*</b></span>
+                    <input class="input100" type="text" formControlName="contact" id="phone"
+                        placeholder="Type your phone">
+                    <span class="focus-input100"></span>
+                    <ng-container
+                        *ngIf="registaionInputValue.get('contact')?.touched && registaionInputValue.get('contact')?.hasError('required')">
+                        <p class="error">Required field</p>
+                    </ng-container>
+                    <ng-container *ngIf="registaionInputValue.get('contact')?.hasError('pattern')">
+                        <p class="error">Worng pattern</p>
+                    </ng-container>
+                </div>
+                <div class="wrap-input100 validate-input m-b-23">
+                    <span class="label-input100">Profile Picture <b class="error">*</b></span>
+                    <input class="input100" type="file" (change)="onFileSelection($event)">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input">
+                    <span class="label-input100">Password <b class="error">*</b></span>
+                    <input class="input100" [type]="changeType?'password':'text'" formControlName="password" id="pwd"
+                        placeholder="Type your password">
+                    <span class="eyeicon" (click)="view()">
+                        <i [ngClass]="visiable?'fa fa-eye':'fa fa-eye-slash'"></i></span>
+                    <ng-container
+                        *ngIf="registaionInputValue.get('password')?.touched && registaionInputValue.get('password')?.hasError('required')">
+                        <p class="error">Required field</p>
+                    </ng-container>
+                    <ng-container *ngIf="registaionInputValue.get('password')?.hasError('pattern')">
+                        <p class="error">
+                            Password must contain atleast one:- <br>
+                            uppercase (A-Z), <br>
+                            lowercase (a-z), <br>
+                            numeric (0-9) and <br>
+                            special character (?=.*[!@#$&*]) <br>
+                            Ex:.xyz@123
+                        </p>
+                    </ng-container>
+                </div>
+                <br>
+
+                <div class="wrap-login100-form-btn">
+                    <div class="login100-form-bgbtn"></div>
+                    <button type="submit" class="login100-form-btn">
+                        SignUp
+                    </button>
+                </div>
+            </form>
+            <p>Alredy have an account <a routerLink="/login">
+                    <h1><b>Login</b></h1>
+                </a></p>
+
+        </div>
+    </div>
+</div>

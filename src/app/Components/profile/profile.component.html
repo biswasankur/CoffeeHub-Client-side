@@ -1,0 +1,56 @@
+<section class="vh-100" style="background-color: #9de2ff; height: auto;">
+    <br><br><br><br><br><br><br>
+    <div class="container py-5 h-100">
+        <!-- <br><br> -->
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-md-9 col-lg-7 col-xl-5">
+                <!-- <br> <br> -->
+                <div class="card" style="border-radius: 15px; width: 600px;">
+
+                    <div class="card-body p-4">
+
+                        <div class="d-flex text-black">
+
+                            <div class="flex-shrink-0" style="border-radius: 150px;">
+                                <img [src]="img_path" alt="Generic placeholder image" class="rounded-circle img-fluid ">
+                            </div>
+
+                            <div class="flex-grow-1 ms-3" >
+                                <h5 class="mb-1" >
+                                    <p>Name:<b>{{profile_pic?.name}}</b></p>
+                                </h5>
+                                <!-- <p class="mb-2 pb-1" style="color: #2b2a2a;"></p> -->
+                                <div class="d-flex borda justify-content-start rounded-3 p-2 mb-4"
+                                    style="background-color: #efefef;">
+                                    <div>
+                                        <p class="small text-muted mb-1"> Email</p>
+                                        <p class="mb-0">{{profile_pic?.email}}</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="small text-muted mb-1">Phone</p>
+                                        <p class="mb-0">{{profile_pic?.contact}}</p>
+                                    </div>
+                                    <div>
+                                        <p class="small text-muted mb-1">
+                                            <span>
+                                                <i class="fa-solid fa-star m-0" style=" color: red;"></i>
+                                            </span>
+                                        </p>
+                                        <p class="mb-0">8.5</p>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- <div class="copyright_section">
+    <div class="container">
+        <p class="copyright_text">2023 All Rights Reserved. Design by @Nabendu @Souvik @Ankur</p>
+    </div>
+  </div> -->

@@ -1,0 +1,67 @@
+<div *ngIf="item.length > 0; else emptyCart">
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Sl No</th>
+        <th scope="col">Image</th>
+        <th scope="col">Item Name</th>
+        <!-- <th scope="col" class="table-danger">Item Details</th> -->
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">SubTotal</th>
+        <th scope="col">Remove</th>
+        <!-- <th scope="col" class="table-primary" colspan="7" rowspan="3">Total</th> -->
+      </tr>
+    </thead>
+    <tbody *ngFor="let cartp of item; let i =index">
+      <tr>
+        <!-- <th scope="row">1</th> -->
+        <td >{{i+1}}</td>
+        <td >
+          <img src="{{img_path}}{{cartp.image}}" alt="image" height="50px" width="50px">
+        </td>
+        <td >{{cartp.itemName}}</td>
+        <!-- <td>{{cartp.itemDetails.slice(0,20)}}</td> -->
+        <td>{{cartp.price}}</td>
+        
+        <td><button type="button"(click)="inc(cartp.id)"> + </button> 
+          {{cartp.quantity}} 
+          <button type="button" (click)="dec(cartp.id)"> - </button>
+
+        </td>
+        <td >{{ cartp.sub_total }}</td>
+        <!-- <td class="table-success">{{cartp.price*cartp.quantity}}</td> -->
+        <!-- <td><strong>{{}}</strong></td> -->
+        <td >
+          <button class="btn btn-danger" (click)="delNoti()" (click)="del(cartp.id)">
+            <i class="fa-sharp fa-solid fa-trash"></i>
+
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <h3>Total: {{grandTotal}} </h3>
+    <!-- <h3>Grand Total: {{getTotal()}}</h3> -->
+  </div>
+  <hr>
+  <div class="buy">
+    <button class="btn btn-outline-primary"><a routerLink="/buynow">Buy Now</a></button>
+  </div>
+</div>
+<br><br>
+<br><br>
+<br><br>
+
+
+
+<ng-template #emptyCart>
+  <div class="card" style="width: mt-4;">
+    <div class="card-body">
+      <h5 class="card-title">Your cart is empty</h5>
+      <a routerLink="/menu" class="shop">Shop Now</a>
+    </div>
+  </div>
+</ng-template>

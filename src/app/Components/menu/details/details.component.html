@@ -1,0 +1,47 @@
+<!-- 
+<div class="card">
+    <img src="{{imagePath}}{{single_details.image}}" class="card-img-top" alt="">
+    <div class="card-body">
+      <h4 class="card-title css"><b class="coffee">Name:</b> {{single_details.itemName}}</h4>
+      <h1 class="card-title"> Name:{{single_details.itemName}}<p>{{single_details.itemName}}</p></h1>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item white"><b class="coffee">Description:</b> &nbsp;{{single_details.itemDetails}}</li>
+      <li class="list-group-item css"><b class="coffee">Price:</b> ₹. {{single_details.price}}</li>
+      <span class="text-danger fw-semibold me-2"><b class="coffee">Price:</b> Rs. {{single_details.price}}</span><del>$250</del>
+
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      
+      <p>
+      <button class="btn btn-sm btn-success"  (click)="addItemTocart(single_details)">Add To Cart </button>
+      
+      </p>
+    </div>
+  </div> -->
+
+
+
+  <div class="card">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{imagePath}}{{single_details.image}}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h4 class="card-title css"><b class="coffee">Name:</b> {{single_details.itemName}}</h4>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item white"><b class="coffee">Description:</b> &nbsp;{{single_details.itemDetails}}</li>
+          <li class="list-group-item css"><b class="coffee">Price:</b> ₹. {{single_details.price}}</li>
+    
+        </ul>
+        <div class="card-body">       
+          <p>
+          <button class="btn btn-sm btn-success"  (click)="addItemTocart(single_details)">Add To Cart </button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
